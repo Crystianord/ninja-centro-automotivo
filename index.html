@@ -73,6 +73,7 @@
   .btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--border);}
   .btn-outline:hover{border-color:var(--orange);color:var(--orange-bright);background:rgba(255,90,31,.06);}
   .btn-lg{padding:18px 38px;font-size:16.5px;}
+  .header-cta .btn-primary span.short{display:none;}
 
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;color:var(--orange-bright);font-weight:700;font-size:13px;
@@ -137,6 +138,7 @@
     nav ul li a::after{display:none;}
     .menu-toggle{display:flex;}
     .header-cta .btn-primary span.full{display:none;}
+    .header-cta .btn-primary span.short{display:inline;}
   }
 
   /* Hero */
@@ -391,7 +393,7 @@
     <div class="header-cta">
       <a class="btn btn-primary" href="https://wa.me/5562983000092?text=Ol%C3%A1!%20Quero%20agendar%20um%20servi%C3%A7o%20na%20Ninja." target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.5c1.5.8 3.3 1.3 5.2 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.2 1 1-3.1-.2-.4C3.5 15 3 13.5 3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9z"/></svg>
-        <span class="full">Agendar no WhatsApp</span><span class="short" style="display:none;">Agendar</span>
+        <span class="full">Agendar no WhatsApp</span><span class="short">Agendar</span>
       </a>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
