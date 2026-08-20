@@ -13,7 +13,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%A5%B7</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#0b1220;
@@ -41,7 +41,7 @@
     *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
   }
   body{
-    font-family:'Rubik',Arial,Helvetica,sans-serif;
+    font-family:'Work Sans',Arial,Helvetica,sans-serif;
     background:var(--bg);
     color:var(--text);
     line-height:1.6;
@@ -55,13 +55,14 @@
   svg{display:block;flex-shrink:0;}
   .container{width:100%;max-width:1240px;margin:0 auto;padding:0 24px;}
   section{padding:var(--space-7) 0;position:relative;}
-  h1,h2,h3,h4{font-family:'Outfit',sans-serif;font-weight:800;letter-spacing:-0.02em;color:var(--ink);}
+  h1,h2,h3,h4{font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:-0.01em;color:var(--ink);text-wrap:balance;}
   .accent{color:var(--orange-dark);}
+  .mono{font-family:'Space Mono',monospace;font-variant-numeric:tabular-nums;}
   :focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:4px;}
 
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:10px;
-    padding:14px 28px;border-radius:9px;font-weight:700;font-size:15px;font-family:'Outfit',sans-serif;
+    padding:14px 28px;border-radius:9px;font-weight:700;font-size:15px;font-family:'Oswald',sans-serif;
     cursor:pointer;border:none;transition:transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease), color .2s var(--ease);
     white-space:nowrap;min-height:44px;
   }
@@ -77,10 +78,10 @@
   .btn-sm{padding:10px 18px;font-size:13.5px;border-radius:7px;}
 
   .eyebrow{
-    display:inline-flex;align-items:center;gap:8px;color:var(--orange-dark);font-weight:700;font-size:12.5px;
-    letter-spacing:1.8px;text-transform:uppercase;margin-bottom:14px;font-family:'Outfit',sans-serif;
+    display:inline-flex;align-items:center;gap:10px;color:var(--orange-dark);font-weight:700;font-size:11.5px;
+    letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;font-family:'Space Mono',monospace;
   }
-  .eyebrow::before{content:"";width:22px;height:2px;background:var(--grad);border-radius:2px;}
+  .eyebrow::before{content:"";width:24px;height:1px;background:var(--orange-dark);}
 
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease), transform .6s var(--ease);}
   .reveal.in{opacity:1;transform:translateY(0);}
@@ -97,7 +98,7 @@
   /* Topbar */
   .topbar{background:var(--navy);color:#aab4c6;font-size:13px;}
   .topbar .container{display:flex;justify-content:space-between;align-items:center;padding-top:9px;padding-bottom:9px;flex-wrap:wrap;gap:8px;}
-  .topbar-left{display:flex;gap:22px;flex-wrap:wrap;}
+  .topbar-left{display:flex;gap:22px;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.02em;}
   .topbar-left span, .topbar-left a{display:flex;align-items:center;gap:7px;transition:color .2s;}
   .topbar-left a:hover{color:#fff;}
   .topbar-left svg{width:14px;height:14px;color:var(--orange);}
@@ -110,18 +111,18 @@
   .topbar-right a:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-2px);}
 
   /* Header */
-  header{background:#fff;position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border);transition:box-shadow .3s;}
-  header.scrolled{box-shadow:0 4px 20px rgba(15,23,42,.06);}
+  header{background:rgba(255,255,255,.86);backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border);transition:box-shadow .3s, background .3s;}
+  header.scrolled{box-shadow:0 4px 24px rgba(15,23,42,.08);background:rgba(255,255,255,.94);}
   header .container{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;gap:24px;}
-  .logo{display:flex;align-items:center;gap:11px;font-family:'Outfit',sans-serif;font-size:20px;font-weight:800;color:var(--ink);}
+  .logo{display:flex;align-items:center;gap:11px;font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;color:var(--ink);}
   .logo .mark{
     width:42px;height:42px;border-radius:10px;background:var(--grad);
     display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0;
     box-shadow:0 6px 16px rgba(224,67,15,.3);
   }
-  .logo .brand span{display:block;font-size:10.5px;font-weight:600;color:var(--text-dim);letter-spacing:2px;font-family:'Rubik',sans-serif;margin-top:1px;}
+  .logo .brand span{display:block;font-size:10.5px;font-weight:600;color:var(--text-dim);letter-spacing:2px;font-family:'Work Sans',sans-serif;margin-top:1px;}
   nav ul{display:flex;gap:32px;}
-  nav a{font-weight:500;font-size:14.5px;color:var(--text-muted);transition:color .2s;position:relative;font-family:'Outfit',sans-serif;}
+  nav a{font-weight:500;font-size:14.5px;color:var(--text-muted);transition:color .2s;position:relative;font-family:'Oswald',sans-serif;}
   nav a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--grad);transition:width .25s var(--ease);}
   nav a:hover{color:var(--ink);}
   nav a:hover::after{width:100%;}
@@ -157,7 +158,7 @@
   }
   .hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
   .hero-eyebrow .mark{width:30px;height:30px;border-radius:8px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:15px;}
-  .hero-eyebrow span{font-family:'Outfit',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange-dark);}
+  .hero-eyebrow span{font-family:'Oswald',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange-dark);}
   .hero-card h1{font-size:clamp(28px,3.6vw,40px);line-height:1.12;margin-bottom:6px;}
   .hero-card h1 .hl{color:var(--orange-dark);}
   .hero-card p.lead{color:var(--text-muted);font-size:15.5px;margin:16px 0 24px;max-width:440px;}
@@ -170,7 +171,7 @@
   }
   .hero-phone-card .icon{width:38px;height:38px;border-radius:9px;background:var(--grad);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
   .hero-phone-card .icon svg{width:18px;height:18px;color:#fff;}
-  .hero-phone-card strong{display:block;color:#fff;font-family:'Outfit',sans-serif;font-size:15px;}
+  .hero-phone-card strong{display:block;color:#fff;font-family:'Space Mono',monospace;font-size:15px;letter-spacing:.02em;}
   .hero-phone-card span{color:#a9b2c3;font-size:12.5px;}
 
   @media (max-width:980px){
@@ -188,8 +189,8 @@
   .value-tile:nth-child(3){background:var(--navy);}
   .value-tile .icon{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
   .value-tile .icon svg{width:21px;height:21px;color:#fff;}
-  .value-tile strong{display:block;color:#fff;font-family:'Outfit',sans-serif;font-size:15px;}
-  .value-tile span{color:rgba(255,255,255,.72);font-size:12.5px;}
+  .value-tile strong{display:block;color:#fff;font-family:'Oswald',sans-serif;font-size:15px;letter-spacing:.01em;}
+  .value-tile span{color:rgba(255,255,255,.72);font-size:11.5px;font-family:'Space Mono',monospace;}
   @media (max-width:900px){.value-grid{grid-template-columns:1fr;}.value-strip{margin-top:0;}}
 
   /* Services teaser — car cutout + list (reference style) */
@@ -210,8 +211,8 @@
   .promo{background:var(--grad);padding:26px 0;}
   .promo .container{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
   .promo-text{display:flex;align-items:center;gap:16px;color:#fff;}
-  .promo-text .tag{background:rgba(255,255,255,.22);padding:6px 14px;border-radius:99px;font-weight:800;font-size:13px;font-family:'Outfit',sans-serif;letter-spacing:.5px;}
-  .promo-text strong{font-family:'Outfit',sans-serif;font-size:17px;font-weight:700;}
+  .promo-text .tag{background:rgba(255,255,255,.22);padding:6px 14px;border-radius:99px;font-weight:700;font-size:13px;font-family:'Oswald',sans-serif;letter-spacing:.5px;}
+  .promo-text strong{font-family:'Oswald',sans-serif;font-size:17px;font-weight:700;}
   .promo-text span{font-size:14px;opacity:.92;}
 
   /* Sobre */
@@ -226,11 +227,11 @@
   }
   .badge-seal .badge-icon{width:42px;height:42px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
   .badge-seal .badge-icon svg{width:22px;height:22px;color:#fff;}
-  .badge-seal strong{display:block;font-family:'Outfit',sans-serif;font-size:14px;}
+  .badge-seal strong{display:block;font-family:'Oswald',sans-serif;font-size:14px;}
   .badge-seal span{font-size:12.5px;color:var(--text-muted);}
   .about-lead{color:var(--text-muted);margin-top:16px;font-size:16px;max-width:520px;}
   .check-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;margin:28px 0;}
-  .check-cols li{display:flex;gap:11px;align-items:center;font-size:14.5px;color:var(--text);font-family:'Outfit',sans-serif;font-weight:500;}
+  .check-cols li{display:flex;gap:11px;align-items:center;font-size:14.5px;color:var(--text);font-family:'Oswald',sans-serif;font-weight:500;}
   .check-cols li svg{width:20px;height:20px;color:var(--orange-dark);flex-shrink:0;}
   .about-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;}
   @media (max-width:980px){
@@ -241,9 +242,9 @@
 
   /* Marcas */
   .brands{padding:34px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:#fff;}
-  .brands-label{text-align:center;font-size:12px;letter-spacing:2px;color:var(--text-dim);text-transform:uppercase;margin-bottom:20px;font-family:'Outfit',sans-serif;}
+  .brands-label{text-align:center;font-size:12px;letter-spacing:2px;color:var(--text-dim);text-transform:uppercase;margin-bottom:20px;font-family:'Oswald',sans-serif;}
   .brands-track{display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;gap:36px;}
-  .brands-track span{font-weight:800;letter-spacing:1.5px;font-size:18px;color:var(--text-dim);font-family:'Outfit',sans-serif;transition:color .2s;}
+  .brands-track span{font-weight:700;letter-spacing:.12em;font-size:15px;color:var(--text-dim);font-family:'Space Mono',monospace;transition:color .2s;}
   .brands-track span:hover{color:var(--text-muted);}
 
   /* Services - product-card style */
@@ -266,10 +267,15 @@
     display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(15,23,42,.18);
   }
   .prod-media .prod-icon svg{width:25px;height:25px;color:var(--orange-dark);}
+  .prod-tag{
+    position:absolute;top:14px;left:14px;z-index:2;font-family:'Space Mono',monospace;font-size:10.5px;
+    letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(11,18,32,.55);backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,.18);padding:5px 11px;border-radius:99px;
+  }
   .prod-body{padding:34px 22px 22px;flex:1;display:flex;flex-direction:column;}
   .prod-body h3{font-size:18.5px;margin-bottom:10px;}
   .prod-body p{color:var(--text-muted);font-size:14.5px;flex:1;margin-bottom:18px;}
-  .prod-link{display:inline-flex;align-items:center;gap:6px;font-family:'Outfit',sans-serif;font-weight:700;font-size:13.5px;color:var(--orange-dark);}
+  .prod-link{display:inline-flex;align-items:center;gap:6px;font-family:'Oswald',sans-serif;font-weight:700;font-size:13.5px;color:var(--orange-dark);}
   .prod-link svg{width:16px;height:16px;transition:transform .2s;}
   .prod-card:hover .prod-link svg{transform:translateX(4px);}
   @media (max-width:980px){.prod-grid{grid-template-columns:repeat(2,1fr);}}
@@ -279,8 +285,8 @@
   .stats{background:var(--navy);}
   .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center;}
   .stats-grid .stat{padding:12px;}
-  .stats-grid .num{font-size:clamp(32px,5vw,48px);font-weight:900;font-family:'Outfit',sans-serif;color:var(--orange);line-height:1;}
-  .stats-grid .label{color:#a9b2c3;font-size:14.5px;margin-top:10px;font-family:'Outfit',sans-serif;font-weight:500;}
+  .stats-grid .num{font-size:clamp(32px,5vw,48px);font-weight:700;font-family:'Space Mono',monospace;font-variant-numeric:tabular-nums;color:var(--orange);line-height:1;}
+  .stats-grid .label{color:#a9b2c3;font-size:14.5px;margin-top:10px;font-family:'Oswald',sans-serif;font-weight:500;}
   @media (max-width:700px){.stats-grid{grid-template-columns:1fr;gap:36px;}}
 
   /* Diferenciais */
@@ -292,7 +298,7 @@
   .diff-card:hover{transform:translateY(-4px);border-color:var(--orange);box-shadow:0 14px 30px rgba(15,23,42,.08);}
   .diff-card .icon{width:44px;height:44px;border-radius:12px;background:var(--orange-light);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;}
   .diff-card .icon svg{width:22px;height:22px;color:var(--orange-dark);}
-  .diff-card h4{font-size:14px;margin-bottom:6px;font-family:'Outfit',sans-serif;}
+  .diff-card h4{font-size:14px;margin-bottom:6px;font-family:'Oswald',sans-serif;}
   .diff-card p{color:var(--text-muted);font-size:12.5px;}
   @media (max-width:980px){.diff-grid{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:500px){.diff-grid{grid-template-columns:1fr;}}
@@ -315,7 +321,7 @@
   .loc-info li{display:flex;gap:14px;margin-bottom:22px;color:var(--text-muted);font-size:15px;align-items:flex-start;}
   .loc-info .icon{width:40px;height:40px;border-radius:10px;background:var(--orange-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
   .loc-info .icon svg{width:19px;height:19px;color:var(--orange-dark);}
-  .loc-info li strong{color:var(--ink);display:block;margin-bottom:3px;font-family:'Outfit',sans-serif;font-size:15px;}
+  .loc-info li strong{color:var(--ink);display:block;margin-bottom:3px;font-family:'Oswald',sans-serif;font-size:15px;}
   .loc-map{border-radius:16px;overflow:hidden;border:1px solid var(--border);height:360px;box-shadow:0 20px 40px rgba(15,23,42,.08);}
   .loc-map iframe{width:100%;height:100%;border:0;}
   @media (max-width:980px){.loc-grid{grid-template-columns:1fr;}.loc-map{order:-1;}}
@@ -336,7 +342,7 @@
   /* Footer */
   footer{background:#000;padding:60px 0 26px;}
   .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px;margin-bottom:40px;}
-  .footer-grid h4{font-size:13.5px;margin-bottom:18px;color:#fff;letter-spacing:1px;text-transform:uppercase;font-family:'Outfit',sans-serif;}
+  .footer-grid h4{font-size:13.5px;margin-bottom:18px;color:#fff;letter-spacing:1px;text-transform:uppercase;font-family:'Oswald',sans-serif;}
   .footer-grid p{color:#8b93a3;font-size:14.5px;max-width:320px;}
   .footer-grid ul li{margin-bottom:12px;}
   .footer-grid ul li a{color:#8b93a3;font-size:14.5px;transition:color .2s;display:inline-flex;align-items:center;gap:8px;}
@@ -349,7 +355,7 @@
   }
   .footer-social a svg{width:16px;height:16px;}
   .footer-social a:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-3px);}
-  .footer-bottom{border-top:1px solid #1b2740;padding-top:22px;text-align:center;color:#69707f;font-size:13px;}
+  .footer-bottom{border-top:1px solid #1b2740;padding-top:22px;text-align:center;color:#69707f;font-size:12px;font-family:'Space Mono',monospace;letter-spacing:.02em;}
   @media (max-width:800px){.footer-grid{grid-template-columns:1fr;gap:36px;}}
 
   /* Floating WhatsApp */
@@ -571,6 +577,7 @@
       <article class="prod-card">
         <div class="prod-media">
           <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=75" alt="Motor e retífica">
+          <span class="prod-tag">Motor</span>
           <span class="prod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
         </div>
         <div class="prod-body">
@@ -583,6 +590,7 @@
       <article class="prod-card">
         <div class="prod-media">
           <img src="https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&w=700&q=75" alt="Suspensão">
+          <span class="prod-tag">Suspensão</span>
           <span class="prod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
         </div>
         <div class="prod-body">
@@ -595,6 +603,7 @@
       <article class="prod-card">
         <div class="prod-media">
           <img src="https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&w=700&q=75" alt="Câmbio">
+          <span class="prod-tag">Câmbio</span>
           <span class="prod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
         </div>
         <div class="prod-body">
@@ -607,6 +616,7 @@
       <article class="prod-card">
         <div class="prod-media">
           <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=75" alt="Freios">
+          <span class="prod-tag">Freios</span>
           <span class="prod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></span>
         </div>
         <div class="prod-body">
@@ -619,6 +629,7 @@
       <article class="prod-card">
         <div class="prod-media">
           <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=700&q=75" alt="Elétrica automotiva">
+          <span class="prod-tag">Elétrica</span>
           <span class="prod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>
         </div>
         <div class="prod-body">
@@ -631,6 +642,7 @@
       <article class="prod-card">
         <div class="prod-media">
           <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=75" alt="Ar-condicionado automotivo">
+          <span class="prod-tag">Climatização</span>
           <span class="prod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg></span>
         </div>
         <div class="prod-body">
@@ -720,7 +732,7 @@
         </li>
         <li>
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-          <div><strong>Telefone / WhatsApp</strong>(62) 9 8300-0092</div>
+          <div><strong>Telefone / WhatsApp</strong><span class="mono">(62) 9 8300-0092</span></div>
         </li>
         <li>
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
